@@ -1,13 +1,13 @@
 {% set name = "teamcity-messages" %}
-{% set version = "1.32" %}
+{% set version = "1.33" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6991d95642c8d067524c90985b650d89caab6ac0bf47b721b931b04951abbfc1
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: ceb5a80105f0fb2f3b1c7840d40b3570052e6ebe921f9463a3b0a4f91631f731
 
 build:
   number: 0
