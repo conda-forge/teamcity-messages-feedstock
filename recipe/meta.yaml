@@ -10,23 +10,24 @@ source:
   sha256: ceb5a80105f0fb2f3b1c7840d40b3570052e6ebe921f9463a3b0a4f91631f731
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   imports:
     - teamcity
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
